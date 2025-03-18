@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -7,6 +9,12 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 header {
@@ -20,6 +28,7 @@ header {
 header h1 {
     margin: 0;
     font-size: 2.5rem;
+    font-weight: 700;
 }
 
 nav ul {
@@ -47,45 +56,73 @@ nav ul li a:hover {
 
 main {
     flex: 1;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 2rem 0;
 }
 
 #hero {
-    background: #6f4e37;
+    background-color: #6f4e37;
     color: #fff;
-    text-align: center;
-    padding: 4rem 2rem;
+    padding: 1rem 1rem;
     border-radius: 8px;
     margin-bottom: 2rem;
-    width: 100%;
 }
 
-#hero h2 {
-    font-size: 2.5rem;
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    flex: 1;
+    padding: 1rem;
+}
+
+.hero-text h2 {
+    font-size: 2rem; /* Diminuído de 2.5rem */
     margin: 0 0 1rem;
+    font-weight: 700;
 }
 
-#hero p {
-    font-size: 1.2rem;
+.hero-text p {
+    font-size: 1rem; /* Diminuído de 1.2rem */
     margin: 0 0 2rem;
+    font-weight: 400;
 }
 
-#hero .btn {
+.hero-text .btn {
     background: #ffeb3b;
     color: #333;
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 4px;
     transition: background 0.3s;
+    font-weight: 700;
 }
 
-#hero .btn:hover {
+.hero-text .btn:hover {
     background: #fff;
+}
+
+.hero-image {
+    flex: 1;
+    padding: 1rem;
+}
+
+.hero-image img {
+    width: 90%; /* Diminuído de 100% */
+    border-radius: 8px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 section {
@@ -101,6 +138,14 @@ section {
 section h2 {
     font-size: 2rem;
     margin-top: 0;
+    font-weight: 700;
+}
+
+section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+    font-weight: 400;
 }
 
 .menu-container {
@@ -120,6 +165,12 @@ section h2 {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     width: 30%;
     box-sizing: border-box;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .menu-item img {
@@ -137,12 +188,14 @@ section h2 {
 .menu-item-info h3 {
     margin: 0;
     font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .menu-item-info p {
     margin: 0;
     font-size: 1.2rem;
     color: #6f4e37;
+    font-weight: 400;
 }
 
 footer {
@@ -151,6 +204,12 @@ footer {
     text-align: center;
     padding: 1rem 0;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 footer .social {
@@ -167,4 +226,33 @@ footer .social a {
 
 footer .social a:hover {
     color: #ffeb3b;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu-item {
+        width: 45%;
+    }
+
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .hero-image {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-item {
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
 }
